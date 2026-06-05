@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: theme('colors.surface.1');
+    --bg-card: theme('colors.surface.0');
+    --border: theme('colors.surface.3');
+    --text-primary: #0f1117;
+    --text-secondary: #5a6480;
+    --text-muted: #9099b0;
+  }
+
+  .dark {
+    --bg: theme('colors.surface-dark.0');
+    --bg-card: theme('colors.surface-dark.1');
+    --border: theme('colors.surface-dark.3');
+    --text-primary: #e8ecf5;
+    --text-secondary: #8892aa;
+    --text-muted: #525c72;
+  }
+
+  * {
+    @apply border-[var(--border)];
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-primary { color: var(--text-primary); }
+  .text-secondary { color: var(--text-secondary); }
+  .text-muted-custom { color: var(--text-muted); }
+  .bg-card { background-color: var(--bg-card); }
+  .bg-surface { background-color: var(--bg); }
+  .border-subtle { border-color: var(--border); }
+}
